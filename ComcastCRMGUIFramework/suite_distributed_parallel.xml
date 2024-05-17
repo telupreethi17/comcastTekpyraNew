@@ -3,7 +3,7 @@
 <suite thread-count="2" parallel="tests" name="Suite">
   <test  name="Test-1">
     <classes>
-      <class name="com.comcast.crm.orgaAllTest.CreateOrganizationTest"/>
+      <class name="com.comcast.crm.contactAllTest.CreateContactTest"/>
     </classes>
   </test>
       <test  name="Test-2">

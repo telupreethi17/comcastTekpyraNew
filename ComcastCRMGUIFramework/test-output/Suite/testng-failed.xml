@@ -1,21 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
-  <listeners>
-    <listener class-name="com.comcast.crm.ListenerUtility.Listener_implementationClass"/>
-  </listeners>
   <test thread-count="5" name="Test(failed)">
-    <parameter name="BROWSER" value="chrome"/>
+    <groups>
+      <run>
+        <include name="smokeTest"/>
+      </run>
+    </groups>
     <classes>
       <class name="com.comcast.crm.orgaAllTest.CreateOrganizationTest">
         <methods>
+          <include name="CreateOrgganizationTest"/>
+          <include name="aftersuit"/>
+          <include name="beforeMethod"/>
+          <include name="Afterclass"/>
           <include name="afterMethod"/>
           <include name="configbeforesuit"/>
           <include name="configbeforeclass"/>
-          <include name="CreateOrgganizationTest"/>
-          <include name="beforeMethod"/>
-          <include name="Afterclass"/>
-          <include name="aftersuit"/>
         </methods>
       </class> <!-- com.comcast.crm.orgaAllTest.CreateOrganizationTest -->
     </classes>

@@ -12,18 +12,19 @@ import org.testng.asserts.SoftAssert;
 import com.aventstack.extentreports.Status;
 import com.comcast.crm.ListenerUtility.Listener_implementationClass;
 import com.comcast.crm.baseTest.BaseClass;
+import com.comcast.crm.baseTest.BaseClass2;
 import com.comcast.crm.generic.webdriverUtility.UtilityClassObject;
 import com.comcast.crm.objrctrepositoryutility.CreateNewOrganizationPage;
 import com.comcast.crm.objrctrepositoryutility.HomePage;
 import com.comcast.crm.objrctrepositoryutility.OrganizationInfoPage;
 import com.comcast.crm.objrctrepositoryutility.OrganizationPage;
-//@Listeners(com.comcast.crm.ListenerUtility.Listener_implementationClass.class)
+@Listeners(com.comcast.crm.ListenerUtility.Listener_implementationClass.class)
 
-public class CreateOrganizationTest extends BaseClass {
+public class CreateOrganizationTest extends BaseClass2 {
 
 	@Test(groups = "smokeTest")
 	public void CreateOrgganizationTest() throws IOException, InterruptedException {
-		UtilityClassObject.gettest().log(Status.INFO, "read data from Excel");
+		UtilityClassObject.getTest().log(Status.INFO, "read data from Excel");
 		String orgname = elib.getDataFromExcel("org", 1, 2) + jlib.getRandomNumber();
 
 		// at compile time driver is null based on user input it goes this is runtime
@@ -33,24 +34,24 @@ public class CreateOrganizationTest extends BaseClass {
 
 		// sTEP2: NAVIGATE TO ORGANIZATION
 		
-	       UtilityClassObject.gettest().log(Status.INFO, "Navigate to org page");
+	       UtilityClassObject.getTest().log(Status.INFO, "Navigate to org page");
 
 		HomePage op = new HomePage(driver);
 		op.getorglink().click();
 
 		// sTEP 3:cREATE ORGANIZATION
-		UtilityClassObject.gettest().log(Status.INFO, "Navigate to create org page");
+		UtilityClassObject.getTest().log(Status.INFO, "Navigate to create org page");
 
 		OrganizationPage og = new OrganizationPage(driver);
 		og.getcreateNewOrg().click();
 
 		// step enter all details and create organization
-		UtilityClassObject.gettest().log(Status.INFO, "Create org");
+		UtilityClassObject.getTest().log(Status.INFO, "Create org");
 
 		CreateNewOrganizationPage cnp = new CreateNewOrganizationPage(driver);
 		cnp.CreateOrg(orgname);
 		
-		UtilityClassObject.gettest().log(Status.INFO,orgname+ "read data from Excel");
+		UtilityClassObject.getTest().log(Status.INFO,orgname+ "read data from Excel");
 
 		// verify the header msg expected result
 		OrganizationInfoPage oip = new OrganizationInfoPage(driver);

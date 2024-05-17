@@ -12,6 +12,7 @@ import org.testng.asserts.SoftAssert;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 import com.comcast.crm.baseTest.BaseClass;
+import com.comcast.crm.baseTest.BaseClass2;
 import com.comcast.crm.objrctrepositoryutility.ContactInfoPage;
 import com.comcast.crm.objrctrepositoryutility.ContactsPage;
 import com.comcast.crm.objrctrepositoryutility.CreateNewOrganizationPage;
@@ -21,7 +22,7 @@ import com.comcast.crm.objrctrepositoryutility.OrganizationInfoPage;
 /**
  * @author Preethi
  */
-public class CreateContactTest extends BaseClass {
+public class CreateContactTest extends BaseClass2 {
 	
 	@Test(groups="smokeTest")
 	public void CreateConatctTest() throws InterruptedException, IOException {

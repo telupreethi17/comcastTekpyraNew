@@ -8,11 +8,11 @@ public class UtilityClassObject {
 	public static ThreadLocal<ExtentTest> test= new ThreadLocal<ExtentTest>();
 	public static ThreadLocal<WebDriver> driver= new ThreadLocal<WebDriver>();
 	
-	public static ExtentTest gettest()
+	public static ExtentTest getTest()
 	{
 		return test.get();
 	}
-	public static void settest(ExtentTest actTest)
+	public static void setTest(ExtentTest actTest)
 	{
 		test.set(actTest); 
 	}

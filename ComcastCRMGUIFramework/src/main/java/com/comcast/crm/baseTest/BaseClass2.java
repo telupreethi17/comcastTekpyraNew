@@ -36,23 +36,14 @@ public class BaseClass2 {
 	public FileUtility flib= new FileUtility();
 	public WebDriver driver= null;
 	public ExtentReports report;
-	public ExtentSparkReporter spark;
+//	public ExtentSparkReporter spark;
 	//because we use in after method we have to make it global
 	public static WebDriver s1driver= null;
 
 	@BeforeSuite(groups= {"smokeTest","RegreesionTest"})
 	public void configbeforesuit() throws SQLException
 	{
-		ExtentSparkReporter spark= new ExtentSparkReporter("./AdvanceReport/report.html");
-		spark.config().setDocumentTitle("CRM TES SUITE RESULTS");
-		spark.config().setReportName("CRM Report");
-		spark.config().setTheme(Theme.DARK);
-		//Add Env information and create test
 		
-		 report= new ExtentReports();
-		report.attachReporter(spark);
-		report.setSystemInfo("os", "Wndows-10");
-		report.setSystemInfo("BROWSER", "Chrome-100");
 		System.out.println("===Connect to DB, Report config==");
 		dblib.getDbConnection();
 	}
@@ -64,7 +55,7 @@ public class BaseClass2 {
 
 	{
 		System.out.println("===Launch the browser===");
-		String BROWSER =flib.getDataFromPropertiesFile("browser");
+		String BROWSER =System.getProperty("browser",flib.getDataFromPropertiesFile("browser"));
 		
 		
 		if(BROWSER.equals("chrome"))
@@ -91,16 +82,13 @@ public class BaseClass2 {
 	public void beforeMethod() throws IOException
 	{
 		System.out.println("===Login to application===");
-		String URL=flib.getDataFromPropertiesFile("url");
-		String USERNAME=flib.getDataFromPropertiesFile("username");
-		String PASSWORD=flib.getDataFromPropertiesFile("password");
+		String URL=System.getProperty("url",flib.getDataFromPropertiesFile("url"));
+		String USERNAME=System.getProperty("username",flib.getDataFromPropertiesFile("username"));
+		String PASSWORD=System.getProperty("password",flib.getDataFromPropertiesFile("password"));
 	
 		LoginPage lp= new LoginPage(driver);
 		lp.LoginToApp(URL,USERNAME, PASSWORD);
-		
-		
-		
-		
+	
 	}
 	@AfterMethod(groups= {"smokeTest","RegreesionTest"})
 	public void afterMethod()
@@ -118,7 +106,7 @@ public class BaseClass2 {
 	@AfterSuite(groups= {"smokeTest","RegreesionTest"})
 	public void aftersuit() throws SQLException
 	{
-		report.flush();
+		
 		System.out.println("Close DB , Report Backup");
 		dblib.closeDbconnection();
 		

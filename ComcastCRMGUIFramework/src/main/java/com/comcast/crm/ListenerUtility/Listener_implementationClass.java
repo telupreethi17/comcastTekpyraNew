@@ -62,7 +62,7 @@ public class Listener_implementationClass implements ITestListener, ISuiteListen
 		// TODO Auto-generated method stub
 		System.out.println("======  ==>" + result.getMethod().getMethodName() + " test started");
 		 test= report.createTest(result.getMethod().getMethodName());
-		 UtilityClassObject.settest(test);
+		 UtilityClassObject.setTest(test);
 		 test.log(Status.INFO,result.getMethod().getMethodName()+"==> STARTED==");
 //execute before each test
 		// displaying name of the test casse

@@ -5,16 +5,13 @@
     <classes>
       <class name="com.comcast.crm.orgaAllTest.CreateOrganizationTest">
         <methods>
+          <include name="CreateOrgganizationTest"/>
+          <include name="aftersuit"/>
+          <include name="beforeMethod"/>
+          <include name="Afterclass"/>
           <include name="afterMethod"/>
           <include name="configbeforesuit"/>
           <include name="configbeforeclass"/>
-          <include name="CreateOrgganizationTest"/>
-          <include name="beforeMethod"/>
-          <include name="Afterclass"/>
-          <include name="DeleteOrgnization"/>
-          <include name="CreateOrganizationWithIndustryTest"/>
-          <include name="CreateOrganizationWithPhoneNumberTest"/>
-          <include name="aftersuit"/>
         </methods>
       </class> <!-- com.comcast.crm.orgaAllTest.CreateOrganizationTest -->
     </classes>

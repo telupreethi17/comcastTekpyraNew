@@ -81,6 +81,7 @@ public class CreateContactTest extends BaseClass2 {
 		//step enter all details and create organization
 			ContactsPage cp= new ContactsPage(driver);
 			cp.createContact(lastname);
+			
 			ExtentTest test= report.createTest("CreateContactTest");
 			test.log(Status.PASS, "contact create");
 						

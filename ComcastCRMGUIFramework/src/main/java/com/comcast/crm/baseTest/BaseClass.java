@@ -60,7 +60,8 @@ public class BaseClass {
 		System.out.println("===Launch the browser===");
 		String BROWSER =browser;
 				//String BROWSER=flib.getDataFromPropertiesFile("browser");
-		
+		//String BROWSER =flib.getDataFromPropertiesFile("browser");
+
 		
 		if(BROWSER.equals("chrome"))
 		{
